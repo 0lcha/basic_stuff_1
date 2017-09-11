@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+     <h1>Searchbox</h1>
+
+    <input type="text" id="color_searchbox" onkeyup="searchFunction()" placeholder="Search for colors..." title="Type in a name">
+<input type="button" click="clear()" id="clearButton" value="X" />
+   
+<ul id="color_list">
+      <li class="blue"><a href="#">Blue</a></li>
+      <li class="white"><a href="#">White</a></li>
+      <li class="red"><a href="#">Red</a></li>
+      <li class="pink"><a href="#">Pink</a></li>
+      <li class="yellow"><a href="#">Yellow</a></li>
+      <li class="black"><a href="#">Black</a></li>
+      <li class="orange"><a href="#">Orange</a></li>
+      <li class="green"><a href="#">Green</a></li>
+      <li class="grey"><a href="#">Grey</a></li>
+      <li class="violet"><a href="#">Violet</a></li>
+    </ul>
+
+  
+    <script>
+        
+        
+       const colorList = document.querySelectorAll('a')
+
+        colorList.forEach((color) => {
+          color.addEventListener('click', setActiveColor)
+        })
+
+        function setActiveColor (e) {
+          for (let i = 0; i < colorList.length; i++) {
+            colorList[i].classList.remove('dupa');
+          }
+          e.target.classList.add('dupa')
+        }
+        
+    document.title = 'Color Searchbox';
+    window.onload = function() {
+  document.getElementById("clearButton").addEventListener("click",clear);
+}
+
+function change(){
+    var ab = document.getElementById('color_searchbox').value;
+    document.getElementById('color_searchbox').value = "";
+ 
+}
+    function searchFunction() {
+      const availableColors = []
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("color_searchbox");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("color_list");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+              availableColors.push(a)
+            } else {
+                li[i].style.display = "none";
+
+            }
+        }
+      document.title = availableColors[0].text
+    }
+
+ function clear() {
+    document.getElementById("color_searchbox").value = "";
+    searchFunction();
+    document.title = 'Color Searchbox';
+  }  
+    </script>
+
+</body>
+</html>

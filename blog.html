@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+    <style>
+	#dummy {
+  		min-width: 200px;
+  		min-height: 200px;
+  		max-width: 200px;
+  		max-height: 400px;
+  		float: left;
+  		margin:0px 20px 20px;
+  		border: 1px solid black;
+  		text-align: center;
+		}
+
+	#dummy button {
+  		float: right;
+  		color: red;
+  		}
+  
+	#dummy img {
+		width: 100px;
+    		height: 140px;
+    		}
+
+	#dummy:nth-child(3n+1){
+    		clear:left
+		}
+
+	input {
+  		border: none;
+  		width: 30px;
+  		text-align: center;
+		}
+     </style>
+ <body>
+
+		<div id="dummy" class="post">
+			<button onclick="myFunction()">X</button>
+			<h3> Tytuł Posta </h3>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus nec nulla tempor 			                    condimentum. Cras id tincidunt enim. Proin pellentesque imperdiet enim.  <p>
+			<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3.com">
+		</div>
+		<div id="dummy" class="post">
+			<button onclick="myFunction()">X</button>
+			<h3> Tytuł Posta </h3>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus nec nulla tempor 			                    condimentum. Cras id tincidunt enim. Proin pellentesque imperdiet enim.  <p>
+			<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3.com">
+		</div>
+		<div id="dummy" class="post">
+			<button onclick="myFunction()">X</button>
+			<h3> Tytuł Posta </h3>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus nec nulla tempor 			                    condimentum. Cras id tincidunt enim. Proin pellentesque imperdiet enim.  <p>
+			<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3.com">
+		</div>
+		<div id="dummy" class="post">
+			<button onclick="myFunction()">X</button>
+			<h3> Tytuł Posta </h3>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus nec nulla tempor 			                    condimentum. Cras id tincidunt enim. Proin pellentesque imperdiet enim.  <p>
+			<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3.com">
+		</div>
+		<div id="dummy" class="post">
+			<button onclick="myFunction()">X</button>
+			<h3> Tytuł Posta </h3>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus nec nulla tempor 			                    condimentum. Cras id tincidunt enim. Proin pellentesque imperdiet enim.  <p>
+			<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3.com">
+		</div>
+		<div id="dummy" class="post">
+			<button onclick="myFunction()">X</button>
+			<h3> Tytuł Posta </h3>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus nec nulla tempor 			                    condimentum. Cras id tincidunt enim. Proin pellentesque imperdiet enim.  <p>
+			<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3.com">
+		</div>
+
+<p id="print_count"></p>
+<script>
+let x = document.querySelectorAll(".post");
+    document.getElementById("print_count").innerHTML = x.length; 
+
+ function myFunction() {
+    let txt;
+    if (confirm("Czy chcesz usunąc ten post?") == true) {
+        let elem = document.getElementById('dummy');
+  		elem.parentNode.removeChild(elem);
+        alert("Post został usunięty");
+  		return false;
+    } else {
+        alert("Post nie został usunięty");
+        return;
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+
+
+</script>
+
+  </body>
+</html>
